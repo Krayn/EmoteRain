@@ -34,14 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BeatSaberPlus, Version=0.0.8.0, Culture=en, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\SteamLibrary_SlowMode\steamapps\common\Beat Saber\Plugins\BeatSaberPlus.dll</HintPath>
-    </Reference>
-    <Reference Include="BeatSaberPlusChatCore, Version=1.12.3.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\SteamLibrary_SlowMode\steamapps\common\Beat Saber\Libs\BeatSaberPlusChatCore.dll</HintPath>
-    </Reference>
     <Reference Include="BSML, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\SteamLibrary_SlowMode\steamapps\common\Beat Saber\Plugins\BSML.dll</HintPath>
@@ -49,6 +41,14 @@
     <Reference Include="BS_Utils, Version=1.4.6.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\SteamLibrary_SlowMode\steamapps\common\Beat Saber\Plugins\BS_Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="ChatCore, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\SteamLibrary_SlowMode\steamapps\common\Beat Saber\Libs\Chatcore.dll</HintPath>
+    </Reference>
+    <Reference Include="EnhancedStreamChat, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\SteamLibrary_SlowMode\steamapps\common\Beat Saber\Plugins\EnhancedStreamChat.dll</HintPath>
     </Reference>
     <Reference Include="HMLib, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -104,10 +104,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BSP\Settings\Main.cs" />
-    <Compile Include="BSP\Settings\Credits.cs" />
-    <Compile Include="BSP\Settings\Combomode.cs" />
-    <Compile Include="BSP\Settings\Subrain.cs" />
     <Compile Include="SubRainFileManager.cs" />
     <Compile Include="Commands\ERCommand.cs" />
     <Compile Include="Commands\CommandRegistration.cs" />
@@ -128,10 +124,6 @@
     <EmbeddedResource Include="manifest.json" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BSP\Settings\Credits.bsml" />
-    <EmbeddedResource Include="BSP\Settings\Main.bsml" />
-    <EmbeddedResource Include="BSP\Settings\Subrain.bsml" />
-    <EmbeddedResource Include="BSP\Settings\Combomode.bsml" />
     <None Include="BuildTargets.targets" />
     <None Include="CreateJunctions.bat" />
     <EmbeddedResource Include="Views\settings.bsml" />
