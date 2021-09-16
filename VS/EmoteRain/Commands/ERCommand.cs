@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using ChatCore.SimpleJSON;
+//using ChatCore.SimpleJSON;
 using ChatCore.Services.Twitch;
 using ChatCore.Models.Twitch;
 using ChatCore.Interfaces;
