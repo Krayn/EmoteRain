@@ -6,10 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using BeatSaberPlusChatCore.Services.Twitch;
+using ChatCore.Services.Twitch;
 using static EmoteRain.Logger;
-using BeatSaberPlus.Utils;
-using BeatSaberPlusChatCore.Interfaces;
+using BS_Utils.Utilities;
+using ChatCore;
+using ChatCore.Interfaces;
+using ChatCore.Services;
 using System.Reflection;
 using EmoteRain.Commands;
 
@@ -19,18 +21,31 @@ namespace EmoteRain {
     /// For a full list of Messages a Monobehaviour can receive from the game,<br/>see <seealso cref="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html"/>.
     /// </summary>
     internal class TwitchMSGHandler {
-
+        private static ChatCoreInstance sc;
         public static void onLoad()
         {
             CommandRegistration.registerCommands();
-            //ChatService.Acquire();
+            /*sc = ChatCoreInstance.Create();
+            var svc = sc.RunTwitchServices();
+            svc.OnTextMessageReceived += Svc_OnTextMessageReceived;*/
+            SharedCoroutineStarter.instance.StartCoroutine(CheckChat());
+        }
+
+        private static IEnumerator CheckChat()
+        {
+            yield return new WaitForSeconds(1);
+            sc = ChatCoreInstance.Create();
+            var svc = sc.RunTwitchServices();
+            svc.OnTextMessageReceived += Svc_OnTextMessageReceived;
+            //ChatCore.Services.Acquire();
             //ChatService.Multiplexer.OnTextMessageReceived += Svc_OnTextMessageReceived;
         }
 
-        public static void Svc_OnTextMessageReceived(IChatService svc, IChatMessage msg)
+        private static void Svc_OnTextMessageReceived(IChatService svc, IChatMessage msg)
         {
             if (msg.Message.StartsWith(Settings.prefix))
             {
+                Log($"Received System Message: {msg.Message}");
                 CMDHandler(svc, msg);
                 return;
             }

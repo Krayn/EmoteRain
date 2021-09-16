@@ -10,13 +10,7 @@ namespace EmoteRain
 {
 	internal class Main : BSMLResourceViewController
 	{
-		public override string ResourceName => string.Join(".", new string[]
-				{
-					base.GetType().Namespace,
-					"BSP.Settings",
-					base.GetType().Name,
-					"bsml"
-				});
+		public override string ResourceName => "EmoteRain.BSP.Settings.Main.bsml";
 
 		/// <summary>
 		/// When settings are changed
@@ -80,10 +74,10 @@ namespace EmoteRain
 		[UIComponent("emote-fallspeed")]
 		public SliderSetting m_Fallspeed;
 
-		[UIAction("change-subrain")]
-		private void ChangeViewToSubRain() => BeatSaberPlus.UI.ViewFlowCoordinator.Instance.SetRightScreen(Plugin.sSubrain);
+		//[UIAction("change-subrain")]
+		//private void ChangeViewToSubRain() => BeatSaberPlus.UI.ViewFlowCoordinator.Instance.SetRightScreen(Plugin.sSubrain);
 
-		[UIAction("change-combo")]
-		private void ChangeViewToCombo() => BeatSaberPlus.UI.ViewFlowCoordinator.Instance.SetRightScreen(Plugin.sCombo);
+		//[UIAction("change-combo")]
+		//private void ChangeViewToCombo() => BeatSaberPlus.UI.ViewFlowCoordinator.Instance.SetRightScreen(Plugin.sCombo);
 	}
 }

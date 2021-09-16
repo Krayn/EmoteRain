@@ -5,10 +5,10 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using BeatSaberPlusChatCore.SimpleJSON;
-using BeatSaberPlusChatCore.Services.Twitch;
-using BeatSaberPlusChatCore.Models.Twitch;
-using BeatSaberPlusChatCore.Interfaces;
+//using ChatCore.SimpleJSON;
+using ChatCore.Services.Twitch;
+using ChatCore.Models.Twitch;
+using ChatCore.Interfaces;
 
 namespace EmoteRain.Commands
 {

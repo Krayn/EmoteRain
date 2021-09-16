@@ -5,13 +5,14 @@ using BeatSaberMarkupLanguage;
 using BeatSaberMarkupLanguage.Attributes;
 using BeatSaberMarkupLanguage.Components;
 using BeatSaberMarkupLanguage.ViewControllers;
+using BeatSaberMarkupLanguage.Attributes;
 
 namespace EmoteRain
 {
     internal sealed class Settings : PersistentSingleton<Settings>
     {
-        
 
+        [UIValue("menu-rain")]
         public static bool menuRain
         {
             get
@@ -33,13 +34,17 @@ namespace EmoteRain
         }
         private static bool? _menuRain;
 
+        [UIAction("test-subrain")]
+        private void TestSubRainClickAction() => RequestCoordinator.subRain();
+
+        [UIValue("size-in-menu")]
         public static float menuSize
         {
             get
             {
                 if (_menuSize == null)
                 {
-                    _menuSize = (float)Plugin.config.GetInt("Settings", "MenuSize", 4, true)/10;
+                    _menuSize = (float)Plugin.config.GetInt("Settings", "MenuSize", 4, true) / 10;
                 }
                 return _menuSize.Value;
             }
@@ -47,13 +52,15 @@ namespace EmoteRain
             {
                 if (value != _menuSize.Value)
                 {
-                    Plugin.config.SetInt("Settings", "MenuSize", (int)(value*10));
+                    Plugin.config.SetInt("Settings", "MenuSize", (int)(value * 10));
                     _menuSize = value;
                 }
             }
         }
         private static float? _menuSize;
 
+
+        [UIValue("song-rain")]
         public static bool songRain
         {
             get
@@ -75,47 +82,53 @@ namespace EmoteRain
         }
         private static bool? _songRain;
 
+
+        [UIValue("size-in-song")]
         public static float songSize {
             get {
-                if(_songSize == null) {
-                    _songSize = (float)Plugin.config.GetInt("Settings", "SongSize", 6, true)/10;
+                if (_songSize == null) {
+                    _songSize = (float)Plugin.config.GetInt("Settings", "SongSize", 6, true) / 10;
                 }
                 return _songSize.Value;
             }
             set {
-                if(value != _songSize.Value) {
-                    Plugin.config.SetInt("Settings", "SongSize", (int)(value*10));
+                if (value != _songSize.Value) {
+                    Plugin.config.SetInt("Settings", "SongSize", (int)(value * 10));
                     _songSize = value;
                 }
             }
         }
         private static float? _songSize;
 
+
+        [UIValue("emote-delay")]
         public static int emoteDelay {
             get {
-                if(_emoteDelay == null) {
+                if (_emoteDelay == null) {
                     _emoteDelay = Plugin.config.GetInt("Settings", "EmoteDelay", 8, true);
                 }
                 return _emoteDelay.Value;
             }
             set {
-                if(value != _emoteDelay.Value) {
+                if (value != _emoteDelay.Value) {
                     Plugin.config.SetInt("Settings", "EmoteDelay", value);
                     _emoteDelay = value;
                 }
             }
         }
         private static int? _emoteDelay;
-        
+
+
+        [UIValue("emote-fallspeed")]
         public static float emoteFallspeed {
             get {
-                if(_emoteFallspeed == null) {
-                    _emoteFallspeed = (float)Plugin.config.GetInt("Settings", "EmoteFallspeed", 30, true)/10;
+                if (_emoteFallspeed == null) {
+                    _emoteFallspeed = (float)Plugin.config.GetInt("Settings", "EmoteFallspeed", 30, true) / 10;
                 }
                 return _emoteFallspeed.Value;
             }
             set {
-                if(value != _emoteFallspeed.Value) {
+                if (value != _emoteFallspeed.Value) {
                     Plugin.config.SetInt("Settings", "EmoteFallspeed", (int)(value * 10));
                     _emoteFallspeed = value;
                 }
@@ -123,6 +136,8 @@ namespace EmoteRain
         }
         private static float? _emoteFallspeed;
 
+
+        [UIValue("sub-rain")]
         public static bool subRain
         {
             get
@@ -144,6 +159,8 @@ namespace EmoteRain
         }
         private static bool? _subRain;
 
+
+        [UIValue("combo-mode")]
         public static bool comboMode    
         {
             get
@@ -223,6 +240,8 @@ namespace EmoteRain
         }
         private static string _subrainEmotes;
 
+
+        [UIValue("subrain-emotecount")]
         public static int subrainEmotecount
         {
             get

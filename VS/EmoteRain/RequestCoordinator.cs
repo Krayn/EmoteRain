@@ -1,5 +1,8 @@
-﻿using BeatSaberPlusChatCore.Interfaces;
-using BeatSaberPlus.Utils;
+﻿using ChatCore.Interfaces;
+using ChatCore.Models.Twitch;
+using EnhancedStreamChat.Chat;
+using EnhancedStreamChat.Graphics;
+using BS_Utils.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
